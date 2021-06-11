@@ -94,26 +94,21 @@ void findsimilar(query q, mail mails[], int n_mails, int answer[], int *answer_l
 
 void test(){
     char a[100000] = {0}, b[100000] = {0};
-    strcpy(a, "I am smart.is \\\stupid");
-    strcpy(b, "i is smArt is stu\\\pid");
+    strcpy(a, "I am smart.is ...stupid.");
+    strcpy(b, "i is smArt is stu...pid.");
     int len1 = 0, len2 = 0;
     long long int hash_array1[100000] = {0}, hash_array2[100000] = {0};
     complete_hash (a,hash_array1,&len1);
     complete_hash (b,hash_array2,&len2);
-    for (int i=0 ; i<len1 ; i++){
-        printf ("%lld ",hash_array1[i]);
-    }
-    printf ("\n");
-    for (int i=0 ; i<len2 ; i++){
-        printf ("%lld ",hash_array2[i]);
-    }
-    printf ("\n");
-    printf ("%lf\n", ratio(hash_array1,hash_array2,len1,len2));
+    printf ("The first sentence is %s\n",a);
+    printf ("The second sectence is %s\n",b);
+    printf ("Their similarity is ");
+    printf ("%lf.\n", ratio(hash_array1,hash_array2,len1,len2));
 }
 
 int main(){
     //api.init(&n_mails, &n_queries, &mails, &queries);
-    test();
+    //test();
     for (int i=0 ; i<n_queries ; i++){
         if (queries[i].type == expression_match){
             int answer[10];
