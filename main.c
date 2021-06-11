@@ -111,8 +111,10 @@ int main(){
     //test();
     for (int i=0 ; i<n_queries ; i++){
         if (queries[i].type == expression_match){
-            int answer[10];
-            //api.answer(i, a, 10);
+            int answer[n_mails];
+            int answer_length = 0;
+            //expressionmatch(queries[i],mails,n_mails,answer,&answer_length);
+            //api.answer(i, answer, answer_length);
         }else if (queries[i].type == find_similar){
             int answer[n_mails];
             int answer_length = 0;
